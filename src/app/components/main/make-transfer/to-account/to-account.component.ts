@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder  } from '@angular/forms';
 
 @Component({
   selector: 'app-to-account',
@@ -7,5 +7,13 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./to-account.component.scss']
 })
 export class ToAccountComponent {
-toAccount = new FormControl('',Validators.required);
+  constructor(private fb: FormBuilder){}
+  transfer=this.fb.group({
+    toAccount :['', Validators.required],
+    amount : ['',[Validators.required, Validators.pattern(/^-?\d*(\.\d+)?$/), Validators.min(-500)]]
+});
+addItem(newItem: Event) {
+  console.log(newItem,"newItem");
+  // this.modalService.open(newItem);
+}
 }

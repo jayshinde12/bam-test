@@ -11,7 +11,6 @@ import { TransectionListComponent } from './components/main/transection-list/tra
 import { TransectionHeaderComponent } from './components/main/transection-list/transection-header/transection-header.component';
 import { FromAccountComponent } from './components/main/make-transfer/from-account/from-account.component';
 import { ToAccountComponent } from './components/main/make-transfer/to-account/to-account.component';
-import { TransferAmountComponent } from './components/main/make-transfer/transfer-amount/transfer-amount.component';
 import { TransferHeaderComponent } from './components/main/make-transfer/transfer-header/transfer-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -36,7 +35,6 @@ const modules = [
     TransectionHeaderComponent,
     FromAccountComponent,
     ToAccountComponent,
-    TransferAmountComponent,
     TransferHeaderComponent,
     TransferPopupComponent,
   ],
