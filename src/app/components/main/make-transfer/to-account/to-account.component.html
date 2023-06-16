@@ -1,0 +1,5 @@
+<div class="px-4 py-2">
+    <label for="to-account" class="block mb-2 text-sm font-medium text-black-700 dark:text-white-500">To Account</label>
+    <input type="text" id="to-account" class="border rounded-sm block w-full p-2" [formControl]="toAccount" placeholder="type an account name">
+    <p class="mt-2 text-xs text-red-600 dark:text-red-500" *ngIf="toAccount.errors?.['required']"><span class="font-medium">This Field is required</span></p>
+</div>
