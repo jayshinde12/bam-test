@@ -1,7 +1,7 @@
-<div class="mb-12 backdrop-blur-sm bg-white rounded-lg" >
+<div class="mb-12 backdrop-blur-xl bg-white rounded-lg" >
     <app-transection-header></app-transection-header>
     <app-filter (inputChange)="filterData($event)" class="ml-2 p-1"></app-filter>
-    <div *ngFor="let singleData of transectionData" class="bg-white border-b-2 p-5">
+    <div *ngFor="let singleData of filteredTransactions" class="bg-white border-b-2 p-5">
         <app-transaction-item>
             <span class="py-5 mx-2 text-[0px] border-2" [style.border-color]="singleData.categoryCode" data-test-hook='transactionColour'>{{singleData.categoryCode}}</span>
             <span class="align-middle" data-test-hook='transactionDate'>{{singleData.dates.valueDate | date:'MMM d'}}</span>

@@ -14,8 +14,8 @@ import { ToAccountComponent } from './components/main/make-transfer/to-account/t
 import { TransferHeaderComponent } from './components/main/make-transfer/transfer-header/transfer-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TransferPopupComponent } from './components/main/make-transfer/transfer-popup/transfer-popup.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from './components/main/modal/modal.component';
 
 const modules = [
   BrowserModule,
@@ -36,7 +36,7 @@ const modules = [
     FromAccountComponent,
     ToAccountComponent,
     TransferHeaderComponent,
-    TransferPopupComponent,
+    ModalComponent,
   ],
   imports: modules,
   providers: [],

@@ -1,0 +1,21 @@
+
+    <div class="relative w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    <ng-content select="[data-test-hook='headerTitle']"></ng-content>
+                </h3>
+                <ng-content select="[data-test-hook='headerButton']"></ng-content>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+                <ng-content select="[data-test-hook='modalContent']"></ng-content>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <ng-content select="[data-test-hook='modalFooter']"></ng-content>
+            </div>
+        </div>
+    </div>

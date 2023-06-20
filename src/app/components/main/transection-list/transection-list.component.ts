@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransectionsService } from 'src/app/components/services/transections.service';
+import { TransectionsService } from '../../../services/transections.service';
 
 @Component({
   selector: 'app-transection-list',
@@ -10,15 +10,19 @@ import { TransectionsService } from 'src/app/components/services/transections.se
 
 export class TransectionListComponent {
   transectionData:any=[];
+  filteredTransactions:any=[];
   constructor(private _transections:TransectionsService){}
   ngOnInit(){
     this._transections.getTransections().subscribe(res=>{
       this.transectionData=res;
+      this.filteredTransactions=this.transectionData;
       console.log(this.transectionData);
       
     })
   }
   filterData(event:any){
-   return this.transectionData.filter((item: { merchant: { name: any; }; }) => item.merchant.name === event.key);
+    this.filteredTransactions = this.transectionData.filter((transaction: { merchant: { name: string; }; }) =>
+      transaction.merchant.name.toLowerCase().includes(event.target.value.toLowerCase())
+    );
   }
 }
